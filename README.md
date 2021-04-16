@@ -1,6 +1,6 @@
-# Write-Log
+# Add-PrefixForLogging
 
-Write-Log is a basic powershell module that wraps a given message with some time information and returns it for logging.
+Add-PrefixForLogging is a basic powershell module that adds some prefix information to a string for logging.
 
 Currently, it is meant to be used inside functions that are wrapped with a Tee-Object call like this
 
