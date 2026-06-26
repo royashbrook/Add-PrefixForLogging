@@ -1,0 +1,17 @@
+name: CI
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - name: validate module
+        shell: pwsh
+        run: |
+          Test-ModuleManifest -Path 'Add-PrefixForLogging/Add-PrefixForLogging.psd1'
+          Import-Module './Add-PrefixForLogging/Add-PrefixForLogging.psd1' -Force
+          Get-Command -Module Add-PrefixForLogging
